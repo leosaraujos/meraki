@@ -7,23 +7,28 @@ $bold   : 700;
 //Colors
 $white	    : #FFFFFF;
 $gray-clean : #f6f9ff;
-$gray       : #777777;
+$gray       : #494949;
 $black      : #444444;
-$purple     : #5f2ced;
-$pu: #9a53f2;
-$pi: #6638e6;
+$green     : #8bc741;
 
 @mixin bgSpace {
-  background-image: -moz-linear-gradient( 45deg, rgb(95,44,237) 0%, rgb(152,73,250) 100%);
-  background-image: -webkit-linear-gradient( 45deg, rgb(95,44,237) 0%, rgb(152,73,250) 100%);
-  background-image: -ms-linear-gradient( 45deg, rgb(95,44,237) 0%, rgb(152,73,250) 100%);
+  background-image: -moz-linear-gradient( -41deg, rgb(98,175,69) 0%, rgb(166,194,88) 100%);
+  background-image: -webkit-linear-gradient( -41deg, rgb(98,175,69) 0%, rgb(166,194,88) 100%);
+  background-image: -ms-linear-gradient( -41deg, rgb(98,175,69) 0%, rgb(166,194,88) 100%);
   opacity: 0.902;
-  // position: absolute;
-  // left: 0px;
-  // top: 0px;
-  // width: 1920px;
-  // height: 1000px;
-  // z-index: 95;
+}
+
+@mixin bgfooter {
+  background-image: -moz-linear-gradient( 90deg, rgb(98,175,69) 0%, rgb(166,194,88) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(98,175,69) 0%, rgb(166,194,88) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(98,175,69) 0%, rgb(166,194,88) 100%);  
+}
+
+@mixin bgbeneficios {
+  background-image: -moz-linear-gradient( 115deg, rgb(98,175,69) 0%, rgb(166,194,88) 100%);
+  background-image: -webkit-linear-gradient( 115deg, rgb(98,175,69) 0%, rgb(166,194,88) 100%);
+  background-image: -ms-linear-gradient( 115deg, rgb(98,175,69) 0%, rgb(166,194,88) 100%);
+  opacity: 0.902;
 }
 
 
@@ -41,9 +46,9 @@ $pi: #6638e6;
 
 .success {
     text-align: center;
-    background: #ddd3fb;
+    background: rgb(166,194,88);
     padding: 0.8rem;
-    color: #5f2ced;
+    color: $gray;
     h4 {
       font-size: 1.1rem;
       margin-bottom: 0;
@@ -59,11 +64,11 @@ $pi: #6638e6;
 
 %bt-default {
   @include border-radius (100px);
-  border: 1px solid $purple;
-  color: $purple;
+  border: 1px solid $green;
+  color: $green;
   transition: 0.2s;
   &:hover {
-    background: $purple;
+    background: $green;
     color: $white;
     transition: 0.2s;
   }
@@ -112,9 +117,13 @@ body {
 section {
   padding: 3.0rem 0;
   .titleSection {
-    color: $purple;
+    margin: 0 auto 3.0rem auto;
     font-weight: $semi-b;
-    margin-bottom: 3.0rem;
+    color: $green;
+    border: 2px solid $green;
+    display: table;
+    padding: 0.5rem 1.5rem;
+    @include border-radius (4px);    
   }
   .description {
     color: $gray;
@@ -129,7 +138,7 @@ section {
     font-weight: $semi-b;
   }
   &.fixClient {
-    background-color: $purple !important;    
+    background-color: $green !important;    
     @include box-shadow();
     .logoHeader {
       width: 200px;
@@ -137,8 +146,8 @@ section {
   }
   .navbar-toggler {
     background: $white;
-    color: rgba($purple, 1);
-    border-color: rgba($purple, 1);
+    color: rgba($green, 1);
+    border-color: rgba($green, 1);
   }
 }
 
@@ -150,6 +159,7 @@ header {
   justify-content: flex-start;
   align-items: center;
   @include bgSpace();
+  overflow: hidden;
   .titlePage {
     color: $white;
     font-weight: $bold;
@@ -169,35 +179,57 @@ header {
     margin: 1.0rem 0;
     @extend %z-1;
     &:hover {
-      color: $purple;
+      color: $green;
       background: $white;
     }
   }
   .float {
     position: absolute;
     top: 70px;
-    right: 0;
+    right: -100px;    
     z-index: 0;
     transform: translatey(0px);
     animation: float 6s ease-in-out infinite;
     img {
-      width: 90%;
+      width: 80%;
+    }
+  }
+  .cisco-header {
+    margin: 1.5rem 0;
+  }
+}
+
+//infoMeraki
+#infoMeraki {
+  background: $gray-clean;
+  ul {
+    list-style: none;
+    li {
+      position: relative;
+      margin-bottom: 1.0rem;
+      text-indent: 20px;
+      color: $black ;
+      span {
+        display: block;
+        text-indent: 0;
+      }
+      &:before {
+        content: '•';
+        color: $green;
+        font-size: 3.0rem;
+        line-height: 0;
+        position: absolute;
+        top: 12px;
+        left: -20px;        
+      }
     }
   }
 }
 
-//ferramentas
-#ferramentas {
+//porque
+#porque {
   .fer {
     margin-bottom: 4.5rem;
-    .icon {
-      margin-bottom: 1.0rem;
-    }
-    .titleFer {
-      color: $black;
-      font-weight: $bold;
-      font-size: 1.0rem;
-    }
     .description {
       color: $gray;
       font-weight: $regular;
@@ -205,21 +237,42 @@ header {
       display: block;
       min-height: 70px;      
     }
-    .btn {      
-      @extend %bt-default;
-      padding: 0.5rem 3.0rem;      
+    a {
+      color: $green;
     }
   }  
+}
+
+//beneficios
+#beneficios {
+  @include bgbeneficios ();
+  .titleSection {
+    color: $white;
+    border-color: $white;
+  }
+  .ben {
+    margin-bottom: 1.5rem;
+  }
 }
 
 //solucoes
 #solucoes {
   background: $gray-clean;
   .sol {
-    .titleSol {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.5rem;
+    .titleSol-1 {
+      color: $green;
+      font-weight: $semi-b;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .titleSol-2 {
       color: $black;
       font-weight: $semi-b;
-      font-size: 1.0rem;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
     }
     .description {
       color: $gray;
@@ -232,10 +285,10 @@ header {
 //contato
 #contato {
   .titleSec {
-    color: $purple;
+    color: $green;
     font-weight: $semi-b;
     font-size: 1.2rem;
-  }
+  }  
   .infoContact {
     color: $black;
     font-weight: $regular;
@@ -246,7 +299,7 @@ header {
       font-weight: $semi-b;
       transition: 0.2s;
       &:hover {
-        color: $purple;
+        color: $green;
         transition: 0.2s;
         text-decoration: none;
       }
@@ -254,7 +307,7 @@ header {
   }
   .bt-send {
     @extend %bt-default;
-    background: $purple;
+    background: $green;
     color: $white;
     padding: 0.5rem 4.0rem;
     @include border-radius (5px);
@@ -291,7 +344,7 @@ header {
 
 //Footer
 footer {
-  background: $purple;
+  @include bgfooter();
   color: $white;
   padding: 3.0rem 0 0 0;
   a {
