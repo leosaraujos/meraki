@@ -44,11 +44,11 @@
             $headers .= "From: $nome <$email>\n"; // remetente
             $headers .= "Return-Path: $nome <$email>\n"; // return-path
 
-            $subject = '2S - Segurança na Nuvem';
+            $subject = '2S - Meraki';
 
             $mensagem = '
             <html>
-            <title>2S - Segurança na Nuvem</title>
+            <title>2S - Meraki</title>
             <body>
                 
             
@@ -57,11 +57,11 @@
                 <thead>
                     <tr>
                         <th colspan="2">
-                            <img src="http://leoaraujo.com/yodesign/2s-security-cloud/images/header-email.jpg" alt="2S - Segurança na Nuvem" width="500px">
+                            <img src="http://leoaraujo.com/yodesign/2s-meraki/images/header-email.jpg" alt="2S - Meraki" width="500px">
                         </th>
                     </tr>
                     <tr bgcolor="#5f2ced">
-                        <th colspan="2" style="font-size: 25px; padding: 10px 0;text-align: center; color: #FFFFFF;">2S - Segurança na Nuvem</th>
+                        <th colspan="2" style="font-size: 25px; padding: 10px 0;text-align: center; color: #FFFFFF;">2S - Meraki</th>
                     </tr>
                 </thead>
                 <tbody>
