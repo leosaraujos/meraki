@@ -157,9 +157,9 @@ header {
   min-height: 750px;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: center;  
   @include bgSpace();
-  overflow: hidden;
+  // overflow: hidden;
   .titlePage {
     color: $white;
     font-weight: $bold;
@@ -186,12 +186,12 @@ header {
   .float {
     position: absolute;
     top: 70px;
-    right: -100px;    
+    right: 0px;    
     z-index: 0;
     transform: translatey(0px);
     animation: float 6s ease-in-out infinite;
     img {
-      width: 80%;
+      // width: 80%;
     }
   }
   .cisco-header {

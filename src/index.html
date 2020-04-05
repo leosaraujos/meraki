@@ -52,10 +52,10 @@
               <img src="images/logo-cisco-header.png" alt="cisco" class="img-fluid cisco-header">
             </figure>
           </div>
-        </div>
-        <figure class="float">
-          <img src="images/padlock-ilustra.png" alt="Padlock" class="">
-        </figure>
+          <figure class="float">
+            <img src="images/padlock-ilustra.png" alt="Padlock" class="">
+          </figure>
+        </div>        
       </div>
     </header>
 
@@ -64,8 +64,9 @@
         <div class="row justify-content-md-center">
           <div class="col-12 col-md-6">
             <ul>
-              <li>Pontos de Acesso (MR), Dispositivos de Segurança e SD-WAN (MX), Software para Administração de Dispositivos Móveis (MDM), Câmeras de Segurança (MV) e Meraki Insight (MI).</li>
+              <li>Pontos de Acesso (MR), Dispositivos de Segurança e <strong>SD-WAN</strong> (MX), Software para Administração de Dispositivos <strong>Móveis (MDM)</strong>, Câmeras de Segurança (MV) e Meraki Insight (MI)”</li>
               <li>Hardware, software e serviços na nuvem integrados</li>
+              
             </ul>
           </div>
           <div class="col-12 col-md-6">
@@ -255,7 +256,8 @@
             
             <div id="formulario">
                 <form enctype="multipart/form-data" id="form_fale" class="form_fale" method="post">
-                <input type="hidden" value="leoaraujo@leoaraujo.com" name="destinatario" />                            
+                <!-- <input type="hidden" value="daniel@oy.com.br" name="destinatario" />                            -->
+                <input type="hidden" value="lpaa83@gmail.com" name="destinatario" />
                 <input type="hidden" value="true" name="contato" />
                 
                     <div class="form-group p-0">
@@ -308,8 +310,8 @@
         <div class="modal-content">
           <div class="modal-body mb-0 p-0">
             <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="http://players.brightcove.net/1384193102001/NJgI8K0ie_default/index.html?videoId=5545157960001"
-                allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+              <!-- <iframe class="embed-responsive-item" src="http://players.brightcove.net/1384193102001/NJgI8K0ie_default/index.html?videoId=5545157960001"
+                allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe> -->
             </div>
           </div>
         </div>
@@ -369,18 +371,18 @@
     <script src="js/app.min.js"></script> 
 
     <script>
-        // Form
-        $(document).ready(function() {
-          $("#form_fale").submit(function(event) {
-              $("#resposta").html("<img src='images/loader.gif' alt='enviando'><br/><small>Mensagem sendo enviada, por favor aguarde... </small>");
-              event.preventDefault(); 
-              $.post("send_mail.php", $("#form_fale").serialize(), function(data) {
-                  $('#resposta').html(data);
-              });
-              return false;
-          });    
-        });
-    </script>
+
+    $(document).ready(function() {
+      $("#form_fale").submit(function(event) {
+          $("#resposta").html("<img src='images/loader.gif' alt='enviando'><br/><small>Mensagem sendo enviada, por favor aguarde... </small>");
+          event.preventDefault(); 
+          $.post("send_mail.php", $("#form_fale").serialize(), function(data) {
+              $('#resposta').html(data);
+          });
+          return false;
+      });    
+    });
+  </script>
 
   </body>
 </html>

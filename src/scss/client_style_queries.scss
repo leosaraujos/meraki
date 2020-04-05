@@ -182,6 +182,9 @@ $mq-desktop           : 1200px !default;
     .float {
       right: 0;
       left: 0;
+       img {
+        width: 90%;
+       }
     }
     figure {
       text-align: center;
